@@ -9,5 +9,5 @@ En el contexto de una migracion de BD con 3 tablas diferentes (departamentos, tr
 
 A continuacion encontramos las instrucciones para la implementacion:
   ### Paso 1: Configuracion inicial
-    - Instalar Python en nuestra maquina
-    - Instalar las bibliotecas necesarias. En este caso, vamos a utilizar Flask (para crear la API REST) y Psycopg2 (para conectarse a la base de datos PostgreSQL)
+  - Instalar Python en nuestra maquina
+  - Instalar las bibliotecas necesarias. En este caso, vamos a utilizar Flask (para crear la API REST) y Psycopg2 (para conectarse a la base de datos PostgreSQL)
