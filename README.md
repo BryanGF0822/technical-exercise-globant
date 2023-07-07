@@ -43,6 +43,10 @@ A continuacion encontramos las instrucciones para la implementacion:
 Al realizar cada uno de las peticiones por primera vez, nos debe aparece un mensaje --> 'Datos insertados correctamente'
 <img width="278" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/6f147569-e75b-4457-89f7-94ea05c040d4">
 
+Finalmente, podrémos revisar en nuestro gestor de base de datos, en mi caso estoy utilizando DBeaver y asi podremos visualizar que los datos se estan subiendo correctamente.
+
+<img width="683" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/030c9f0d-2dd8-4603-a6ff-3bf59efc3f54">
+
   
 
 
