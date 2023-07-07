@@ -46,7 +46,8 @@ Al realizar cada uno de las peticiones por primera vez, nos debe aparece un mens
 
 Finalmente, podrémos revisar en nuestro gestor de base de datos, en mi caso estoy utilizando DBeaver y asi podremos visualizar que los datos se estan subiendo correctamente.
 
-<img width="683" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/030c9f0d-2dd8-4603-a6ff-3bf59efc3f54">
+<img width="519" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/aafbe046-36ba-41df-af31-b9c0defe1767">
+
 
   
 
