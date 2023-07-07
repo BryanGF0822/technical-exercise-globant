@@ -36,6 +36,16 @@ def read_csv(file_path, table_name):
         finally:
             cursor.close()
 
+    # Después de cargar los datos, se debe realizar una nueva consulta para obtener los datos desde la base de datos
+    cursor = conn.cursor()
+    select_query = f"SELECT * FROM {table_name}"
+    cursor.execute(select_query)
+    data = cursor.fetchall()
+    cursor.close()
+
+    # Devuelve los datos cargados desde la base de datos
+    return data
+
 
 @app.route('/departments', methods=['GET'])
 def get_departments():
