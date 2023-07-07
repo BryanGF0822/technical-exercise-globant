@@ -5,8 +5,12 @@ import psycopg2.extras
 from psycopg2.extras import execute_batch
 
 conn = psycopg2.connect(
+    # host="localhost",
+    # database="guapi_db",
+    # user="bryan",
+    # password="password"
     host="localhost",
-    database="guapi_db",
+    database="globant_postgres",
     user="bryan",
     password="password"
 )
@@ -21,6 +25,8 @@ def read_csv(file_path, table_name):
     with open(file_path, 'r') as file:
         reader = csv.reader(file)
         data = list(reader)
+    #reemplaza valores en blaco por None    
+    data = [[None if value == '' else value for value in row] for row in data]
     return data
 
 
