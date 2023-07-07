@@ -41,6 +41,7 @@ A continuacion encontramos las instrucciones para la implementacion:
   - Employees: 'http://localhost:5000/employees'
 
 Al realizar cada uno de las peticiones por primera vez, nos debe aparece un mensaje --> 'Datos insertados correctamente'
+
 <img width="278" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/6f147569-e75b-4457-89f7-94ea05c040d4">
 
 Finalmente, podrémos revisar en nuestro gestor de base de datos, en mi caso estoy utilizando DBeaver y asi podremos visualizar que los datos se estan subiendo correctamente.
