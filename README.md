@@ -48,8 +48,7 @@ Finalmente, podrémos revisar en nuestro gestor de base de datos, en mi caso est
 
 <img width="519" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/aafbe046-36ba-41df-af31-b9c0defe1767">
 
-
-  
-
+## Sección 2: SQL
+A partir de la insercion de data que realizamos anteriormente, vamos a explorar un poco la data.
 
 
