@@ -1,25 +1,21 @@
-from flask import Flask, jsonify
-import csv
-import psycopg2
-import psycopg2.extras
 from psycopg2.extras import execute_batch
+from database.db import get_connection
+from flask import Flask, jsonify
+from config import config
+import psycopg2.extras
+import psycopg2
+import csv
 
-conn = psycopg2.connect(
-    # host="localhost",
-    # database="guapi_db",
-    # user="bryan",
-    # password="password"
-    host="localhost",
-    database="globant_postgres",
-    user="bryan",
-    password="password"
-)
+conn = get_connection()
 
 app = Flask(__name__)
 
+def page_not_found(error):
+    return "<h1>Not found page</h1>", 404
+
 @app.route('/')
 def hello():
-    return 'Hello, World! --> This is the technical exercise to join Globant as a Data Engineer Jr.'
+    return "<h1>Hello Glober!</h1> \n <p>This is the technical exercise to join Globant as a Data Engineer Jr.</p>"
 
 def read_csv(file_path, table_name):
     with open(file_path, 'r') as file:
@@ -111,5 +107,9 @@ def get_employees():
     finally:
         cursor.close()
 
-if __name__ == '__main__': 
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.config.from_object(config['development'])
+
+    # Error handlers
+    app.register_error_handler(404, page_not_found) 
+    app.run()
