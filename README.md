@@ -1,4 +1,4 @@
-# technical-exercise-globant
+# Technical Exercise Globant
 Technical exercise to apply for a Junior Data Engineer position at Globant.
 
 ## Sección 1: API
@@ -50,5 +50,38 @@ Finalmente, podrémos revisar en nuestro gestor de base de datos, en mi caso est
 
 ## Sección 2: SQL
 A partir de la insercion de data que realizamos anteriormente, vamos a explorar un poco la data.
+Debemos saber que antes de utilizar el API REST debemos tener listas las tablas en PostgreSQL que coincidan con los datos proporcionados para el ejercicio, teniendo en cuentes, sus requerimientos y restricciones. A continuacion te dejo las querys para crear la tablas:
+
+<img width="461" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/3fc67594-c4e6-46ff-bfb5-a6b982246951">
+
+Seguido de esto, podemos buscar los nuevos end-point que cumplen con los dos requerimientos que nos proporciona el ejercicio. Acá te dejo las rutas para que puedas visitar y para ejecutar las querys:
+  - R1: Number of employees hired for each job and department in 2021 divided by quarter. The table must be ordered alphabetically by department and job.
+    - 'http://localhost:5000/jobs/employees/2021/quarters'
+    - Esta el query que se envia a traves de la peticion:
+      
+      <img width="586" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/10718938-a2cf-4fc8-82fc-7941bc231515">
+      
+    - Nuesto ouput:
+        
+      <img width="189" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/92c16934-89f9-43c6-b236-1bbd8ee7a69a">
+
+  - R2: List of ids, name and number of employees hired of each department that hired more mployees than the mean of employees hired in 2021 for all the departments, ordered by the number of employees hired (descending).
+    - 'http://localhost:5000/departments/more_employees_than_mean'
+    - Esta el query que se envia a traves de la peticion:
+      
+      <img width="629" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/16ce04c1-9787-4407-9c8b-bcdd2a8d746c">
+      
+    - Nuestro output:
+      
+      <img width="187" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/a0c869a9-850a-48e9-87e5-ae42336d1200">
+
+## Sesion 3: Bonus Track! Cloud, Testing and Containers.
+
+- Logramos generar algunos casos de prueba con la libreria "pytest"
+    
+  <img width="635" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/d498fd07-8901-4874-bc26-baab2fb49350">
+
+
+
 
 
