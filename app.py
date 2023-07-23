@@ -1,5 +1,5 @@
 from psycopg2.extras import execute_batch
-from database.db import get_connection
+from database.db import get_connection, create_tables, truncate_tables, table_exists
 from flask import Flask, jsonify
 from config import config
 import psycopg2.extras
@@ -107,39 +107,6 @@ def get_employees():
     finally:
         cursor.close()
 
-
-# @app.route('/employees/2021/quarters', methods=['GET'])
-# def get_employees_by_quarter():
-#     cursor = conn.cursor()
-#     try:
-#         query = """
-#         SELECT d.department_name, j.job_title, EXTRACT(QUARTER FROM e.hire_date) AS quarter, COUNT(*) AS num_employees
-#         FROM employees e
-#         INNER JOIN departments d ON e.department_id = d.department_id
-#         INNER JOIN jobs j ON e.job_id = j.job_id
-#         WHERE EXTRACT(YEAR FROM e.hire_date) = 2021
-#         GROUP BY d.department_name, j.job_title, quarter
-#         ORDER BY d.department_name, j.job_title
-#         """
-#         cursor.execute(query)
-#         result = cursor.fetchall()
-
-#         data = []
-#         for row in result:
-#             department_name, job_title, quarter, num_employees = row
-#             data.append({
-#                 "department_name": department_name,
-#                 "job_title": job_title,
-#                 "quarter": int(quarter),
-#                 "num_employees": int(num_employees)
-#             })
-
-#         return jsonify(data)
-#     except Exception as e:
-#         return jsonify({"error": f"Error al obtener los datos: {str(e)}"}), 500
-#     finally:
-#         cursor.close()
-
 @app.route('/employees/2021/quarters', methods=['GET'])
 def get_employees_by_quarter():
     cursor = conn.cursor()
@@ -212,6 +179,13 @@ def get_departments_with_more_employees_than_mean():
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])
+
+    # Create or Truncate tables
+    with conn.cursor() as cursor:
+        if table_exists(cursor, 'jobs') and table_exists(cursor, 'departments') and table_exists(cursor, 'employees'):
+            truncate_tables(conn)
+        else:
+            create_tables(conn)
 
     # Error handlers
     app.register_error_handler(404, page_not_found) 
