@@ -1,4 +1,6 @@
 Flask
 psycopg2
 python-decouple
+pytest
+requests
 
