@@ -9,29 +9,29 @@ En el contexto de una migracion de BD con 3 tablas diferentes (departamentos, tr
 
 A continuacion encontramos las instrucciones para la implementacion:
   ### Paso 1: Configuracion inicial
-  - Instalar Python en nuestra maquina
-  - Instalar las bibliotecas necesarias. En este caso, vamos a utilizar Flask (para crear la API REST) y Psycopg2 (para conectarse a la base de datos PostgreSQL)
-  ### Paso 2: Estructura de archivos:
-  Creamos lo siguientes archivos.
-  - 'app.py': el archivo pricipal de la aplicacion Flask
-  - 'data/': un directorio para almacenar los archivos CSV
-  ### Paso 3: Configuramos un entorno virtual (opcional):
-  - Creamos un entorno virtual para el proyecto (recomendado)
-  - Activamos el entorno antes de continuar
-  ### Paso 4: Instalamos las dependencias:
+  - Instalar Python
+  - Instalar PostgreSQL
+  - Instalar Docker Desktop
+  - Instalar las bibliotecas necesarias. En este caso, vamos a utilizar Flask (para crear la API REST), Psycopg2 (para conectarse a la base de datos PostgreSQL) y python-decouple
+  
+  ### Paso 2: Instalamos las dependencias:
   - Ejecutamos los comando necesarios segun las librerias que necesitemos. En este caso vamos a utilizar Flask y PosgreSQL:
     - pip install flask
     - pip install psycopg2
-  ### Paso 5: Ejecutamos el programa:
-  Para saber si estamos dentro de ambiente debemos verificar en la consola al inicio de aparece entre parantesis el nombre del ambiente --> (env_name)
-  
-  <img width="436" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/1e29bc4e-da09-4d31-aa38-b05a68eee5f8">
 
+  ### Paso 3: Abrir el proyecto:
+  - Podemos utilizar Visual Studio Code para abrir el proyecto
+  - En la carpeta raiz del proyecto activamos el ambiente previamente creado utilizando **source venv/Scripts/activate**
+  - Para saber si estamos dentro de ambiente debemos verificar en la consola al inicio de aparece entre parantesis el nombre del ambiente --> (env_name)
+    
+  <img width="436" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/1e29bc4e-da09-4d31-aa38-b05a68eee5f8">
+  
+  ### Paso 4: Ejecutamos el programa:
   Ahora, podemos ejecutar el programa con el comando --> 'python app.py'
   
   <img width="677" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/10c6f2bb-b36a-45d4-b8f5-7405f6fc5428">
 
-  Para validar que el correcto funcionamiento, vamos al navegador en la ruta --> 'http://localhost:5000' y debe aparece un mensaje de Hello Word!
+  Para validar que el correcto funcionamiento, vamos al navegador en la ruta --> 'http://localhost:5000' y debe aparece un mensaje de Hello Glober!
 
   <img width="429" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/0d0d1ba7-ed3f-48da-8140-a1c838a7bf93">
 
@@ -77,9 +77,19 @@ Seguido de esto, podemos buscar los nuevos end-point que cumplen con los dos req
 
 ## Sesion 3: Bonus Track! Cloud, Testing and Containers.
 
-- Logramos generar algunos casos de prueba con la libreria "pytest"
+### Testing
+Logramos generar algunos casos de prueba con la libreria "pytest"
+- Para ejecutar las pruebas, debemos correr la API REST y luego ingresar al folder llamado "tests" y ejecutar el comando *pytest*. A continuacion encontramos un ejemplo:
     
   <img width="635" alt="image" src="https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/d498fd07-8901-4874-bc26-baab2fb49350">
+
+### Container
+Logramos dockerizar la API. Acontinuacion encuentras los datos para ejecutarlo:
+- Ejecuta el comando *docker-compose up*, y veras correr la API desde el contenedor.
+  
+  ![image](https://github.com/BryanGF0822/technical-exercise-globant/assets/48836505/06f2288e-3046-48d6-bf0d-8a8c9960a412)
+
+
 
 
 
