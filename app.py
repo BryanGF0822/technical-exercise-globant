@@ -6,7 +6,7 @@ import psycopg2.extras
 import psycopg2
 import csv
 
-conn = get_connection()
+#conn = get_connection()
 
 app = Flask(__name__)
 
@@ -179,6 +179,8 @@ def get_departments_with_more_employees_than_mean():
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])
+
+    conn = get_connection()
 
     # Create or Truncate tables
     with conn.cursor() as cursor:

@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS employees (
             job_id INT,
             FOREIGN KEY (job_id) REFERENCES jobs(job_id),
             FOREIGN KEY (department_id) REFERENCES departments(department_id)
-        )
+        );
